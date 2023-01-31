@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="styleSheet" href="../css/event.css">
+</head>
+<body>
+<h1>Hover 이벤트 확인하기</h1>
+<div id="input">
+	Mouse Over or Out
+</div>
+<h2>결과</h2>
+<div id="result"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$('#input').hover(function(){
+	$('#result').html("Mouse Enter Event(onMouseOver)");
+},
+function(){
+	$('#result').html("Mouse Enter Event(onMouseOut)");
+});
+//hover는 앞에 function은 들어오면, 뒤에  function은 나가면 작동하게 지정되어 있다.
+</script>
+</body>
+</html>

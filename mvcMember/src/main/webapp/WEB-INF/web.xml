@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>mvcMember</display-name>
+  
+<!--   <servlet>
+  	<servlet-name>ControlServlet</servlet-name>
+  	<servlet-class>com.control.ControlServlet(.class생략)</servlet-class>
+  	<init-param>
+  		<param-name>propertyConfig</param-name>
+  		<param-value>E:/java_ee/workspace/mvcMember/src/main/webapp/WEB-INF/command.properties</param-value>
+  		역슬래쉬로 하면 파일 경로 인식 불가
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ControlServlet</servlet-name>
+  	<url-pattern>/ControlServlet 이 보이지 않게 숨긴다. angel생략 가능 *.do</url-pattern>
+  </servlet-mapping> 
+  나중에 aws에 올리면 param-value를 못 읽는다. 그래서 annotation을 활용한다.
+  -->
+ 
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/video_contents.css" >
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> 
+<script src="js/videoPageJS.js"></script>
+
+</head>
+<body>
+
+
+<div class="contents_container">
+	<div id="headcategory-copy" class="headcategory-copy"></div>
+	
+<!-- ----------------------------------롤링 배너----------------------------------- -->
+<div class="bannerbox">
+	<input type="radio" name="banner" id="banner01" checked>
+	<input type="radio" name="banner" id="banner02">
+	<input type="radio" name="banner" id="banner03">
+	<input type="radio" name="banner" id="banner04">
+	<ul class="bannerlist">
+		<li class="banneritem">
+		</li>
+		<li class="banneritem">
+		</li>
+		<li class="banneritem">
+		</li>
+		<li class="banneritem">
+		</li>
+	</ul>
+	<div class="banner-control">
+		<div class="control01">
+			<label for="banner04" class="prev"></label>
+			<label for="banner02" class="next"></label>
+		</div>
+		<div class="control02">
+			<label for="banner01" class="prev"></label>
+			<label for="banner03" class="next"></label>
+		</div>
+		<div class="control03">
+			<label for="banner02" class="prev"></label>
+			<label for="banner04" class="next"></label>
+		</div>
+		<div class="control04">
+			<label for="banner03" class="prev"></label>
+			<label for="banner01" class="next"></label>
+		</div>
+	</div>
+</div>
+<br/>
+<br/>
+<!-- ----------------------------------롤링배너 끝----------------------------------- -->
+
+<!-- ------------------- 카테고리 버튼 ------------------- -->
+<div class = "head-category" id = "head-category">
+<button type="button" class="category">전체</button>
+<button type="button">영화</button>
+<button type="button">TV프로그램</button>
+</div>
+<br>
+<br>
+<!-- ------------------- 카테고리 버튼 끝 ------------------- -->
+
+<!-- ------------------- 카테고리별 컨텐츠 ------------------- -->
+<div id="movie-Contents"></div>
+<br>
+<div id="tv-Contents"></div>
+<!-- ------------------- 카테고리별 컨텐츠 끝 ------------------- -->
+</div><!-- 컨테이너div -->
+
+
+</body>
+</html>

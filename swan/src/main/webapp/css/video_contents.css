@@ -1,0 +1,332 @@
+@charset "UTF-8";
+
+:root{
+	--size:-200%;
+	--size2:-100%;
+	
+	--bannerSize4p:-300%;
+}
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	background:black;
+	color:white;
+	border-color:black;
+	font-family:sans-serif;
+	
+}
+/* 배너 */
+ul, li {
+	list-style:none;
+}
+.bannerbox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+/* 	max-height:400px; */
+	
+}
+
+.bannerbox .bannerlist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+	background:black;
+}
+.bannerbox .bannerlist .banneritem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	background-color:#fff;
+	width:100%;
+	transition:all 1s;
+	background:black;
+}
+.bannerbox .bannerlist .banneritem .banneritemDiv{
+	display:inline-block;
+	max-width:100%;
+	
+}
+.bannerbox .bannerlist .banneritem .banneritemDiv > a {
+	display:block;
+	width:auto;
+	position:relative;
+	text-align:center;
+}
+.bannerbox .bannerlist .banneritem .banneritemDiv> a img {
+/* max-width:20%; 
+float:left; */
+	border-radius: 10px;
+	max-width:95%;
+}
+.bannerbox .banner-control [class*="control"] label {
+	position:absolute;
+	z-index:9999;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	/* border-radius:50%; */
+	cursor:pointer;
+}
+.bannerbox .banner-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('../img/left-arrow.png') center center / 50% no-repeat;
+}
+.bannerbox .banner-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('../img/right-arrow.png') center center / 50% no-repeat;}
+
+[name="banner"] {
+	display:none;
+}
+#banner01:checked ~ .bannerlist .banneritem {
+	left:0;
+}
+#banner02:checked ~ .bannerlist .banneritem {
+	left:-100%;
+}
+#banner03:checked ~ .bannerlist .banneritem {
+	left:var(--size);
+}
+#banner04:checked ~ .bannerlist .banneritem {
+	left:var(--bannerSize4p);
+}
+#banner05:checked ~ .bannerlist .banneritem {
+	left:-400%;
+}
+#banner06:checked ~ .bannerlist .banneritem {
+	left:-500%;
+}
+#banner07:checked ~ .bannerlist .banneritem {
+	left:-600%;
+}
+
+
+.banner-control [class*="control"] {
+	display:none;
+}
+#banner01:checked ~ .banner-control .control01 {
+	display:block;
+}
+#banner02:checked ~ .banner-control .control02 {
+	display:block;
+}
+#banner03:checked ~ .banner-control .control03 {
+	display:block;
+}
+#banner04:checked ~ .banner-control .control04 {
+	display:block;
+}
+#banner05:checked ~ .banner-control .control05 {
+	display:block;
+}
+#banner06:checked ~ .banner-control .control06 {
+	display:block;
+}
+#banner07:checked ~ .banner-control .control07 {
+	display:block;
+}
+/* 메인 슬라이드 끝 */
+
+/* 상단버튼 시작 */
+hr{
+	background:grey;
+	height:1px;
+	border:0;
+	border-color:red;
+}
+.head-category{
+	top:0;
+	position:sticky;
+	z-index:9999;
+}
+
+.head-category > button{
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:10px;
+	padding-bottom:10px;
+	color:white;
+	font-size:1.5em;
+	background:black;
+	border-color:grey;
+	border-radius: 30px 30px 30px 30px/50% 50% 50% 50%;
+	/* top-left-x top-right-x bottom-right-x bottom-left-x /
+	top-left-y top-right-y bottom-right-y bottom-left-y */
+}
+.head-category > button.category{
+	background:white;
+	color:black;
+}
+/* 상단버튼 끝 */
+
+
+/* 영화 basic컨텐츠 */
+.topTen_slidebox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+}
+.topTen_slidebox .topTen_slidelist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.topTen_slidebox .topTen_slidelist .topTen_slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	background:black;
+	width:100%;
+	transition:all 1s;
+	
+}
+.topTen_slidebox .topTen_slidelist .topTen_slideitem .topTen_slideDiv{
+	display:block;
+	width:20%;
+	float:left;
+}
+	
+.topTen_slidebox .topTen_slidelist .topTen_slideitem .topTen_slideDiv > a {
+	display:block;
+	text-align:center;
+	position:relative;
+}
+.topTen_slidebox .topTen_slidelist .topTen_slideitem .topTen_slideDiv > a div{
+	text-align: left;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    left: -3%;
+    top: -5%;
+    background: transparent;
+}
+
+.topTen_slidebox .topTen_slidelist .topTen_slideitem .topTen_slideDiv > a img {
+	max-width:90%;
+	border-radius:5px;
+	
+}
+
+.topTen_slidebox .topTen_slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.topTen_slidebox .topTen_slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('../img/left-arrow.png') center center / 50% no-repeat;
+}
+.topTen_slidebox .topTen_slide-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('../img/right-arrow.png') center center / 50% no-repeat;}
+
+[name="topTen_slide"] {
+display:none;
+}
+#topTen_slide01:checked ~ .topTen_slidelist .topTen_slideitem {
+left:0;
+}
+#topTen_slide02:checked ~ .topTen_slidelist .topTen_slideitem {
+left:var(--size2);
+}
+#topTen_slide03:checked ~ .topTen_slidelist .topTen_slideitem {
+left:var(--size);
+
+}
+
+
+.topTen_slide-control [class*="control"] {
+display:none;
+}
+#topTen_slide01:checked ~ .topTen_slide-control .control01 {
+display:block;
+}
+#topTen_slide02:checked ~ .topTen_slide-control .control02 {
+display:block;
+}
+#topTen_slide03:checked ~ .topTen_slide-control .control03 {
+display:block;
+}
+#topTen_slide04:checked ~ .topTen_slide-control .control04 {
+display:block;
+}
+
+/* 영화 basic컨텐츠 끝 */
+
+
+/* tv프로그램 basic컨텐츠 */
+.slidebox {
+max-width:90%;
+margin:0 auto;
+position:relative;
+}
+.slidebox .slidelist {
+position:relative;
+white-space:nowrap;
+font-size:0;
+overflow:hidden;}
+.slidebox .slidelist .slideitem {
+position:relative;
+display:inline-block;
+vertical-align:middle;
+background-color:#fff;
+width:100%;
+transition:all 1s;
+}
+.slidebox .slidelist .slideitem > a {
+display:block;
+width:auto;
+position:relative;
+}
+.slidebox .slidelist .slideitem > a img {
+max-width:20%; 
+float:left;
+}
+
+.slidebox .slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.slidebox .slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('../img/left-arrow.png') center center / 50% no-repeat;
+}
+.slidebox .slide-control [class*="control"] label.next {
+right:-50px;
+background:#333 url('../img/right-arrow.png') center center / 50% no-repeat;}
+
+[name="slide"] {
+display:none;
+}
+#slide01:checked ~ .slidelist .slideitem {
+left:0;
+}
+#slide02:checked ~ .slidelist .slideitem {
+left:-100%;
+}
+
+
+.slide-control [class*="control"] {
+display:none;
+}
+#slide01:checked ~ .slide-control .control01 {
+display:block;
+}
+#slide02:checked ~ .slide-control .control02 {
+display:block;
+}
+
+/* tv프로그램 basic컨텐츠 끝 */
+
+

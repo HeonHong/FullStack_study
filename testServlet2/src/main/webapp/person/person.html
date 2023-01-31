@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+<form name = "personForm" method = "get" action = "http://localhost:8080/testServlet2/PersonServlet">
+<table border = "1" cellpadding = "7" cellspacing="0">
+<tr>
+	<td>이름</td>
+	<td><input type = "text" name = "name" id = "name" placeholder = "이름입력" size = "18">
+		<div id = "nameDiv"></div>
+	</td>
+</tr>
+
+<tr>
+	<td>성별</td>
+	<td><input type = "radio" name = "gender" id = "gender_m" value = "0"/>
+		<label for "gender_m">남</label>
+		<input type = "radio" name = "gender" id = "gender_f" value = "1"/>
+		<label for "gender_f">여</label>
+	</td>
+</tr>
+
+<tr>
+	<td>색깔</td>
+	<td><select name = "color" id ="color">
+		<option >색깔</option>
+		<option value = "red" >빨강</option>
+		<option value = "green">초록</option>
+		<option value = "blue">파랑</option>
+		<option value = "magenta">보라</option>
+		<option value = "cyan">하늘</option>
+		</select>
+	</td>
+</tr>
+
+<tr>
+	<td>취미</td>
+	<td><input type = "checkbox" name = "hobby" id = "hobby1" value="독서"/>
+		<label for = "hobby1">독서</label>
+		<input type = "checkbox" name = "hobby" id = "hobby2" value="영화"/>
+		<label for = "hobby2">영화</label>
+		<input type = "checkbox" name = "hobby" id = "hobby3" value="음악"/>
+		<label for = "hobby3">음악</label>
+		<input type = "checkbox" name = "hobby" id = "hobby4" value="게임"/>
+		<label for = "hobby4">게임</label>
+		<input type = "checkbox" name = "hobby" id = "hobby5" value="쇼핑"/>
+		<label for = "hobby5">쇼핑</label>
+	</td>
+</tr>
+
+<tr height = "50">
+	<td>과목</td>
+	<td><select name = "subject" size ="5" multiple="multiple">
+		<option value = "JAVA" >JAVA</option>
+		<option value = "SERVLET">SERVLET</option>
+		<option value = "JSP">JSP</option>
+		<option value = "SPRING">SPRING</option>
+		</select>
+	</td>
+</tr>
+
+<tr>
+<td colspan = "2" align = "center">
+<input type = "button" value = "SEND" onclick = "javascript:check()">
+<input type = "reset" value = "CANCEL">
+</table>
+</form>
+<Script type="text/javascript">
+function check(){
+	document.getElementById("nameDiv").innerText="";
+	if(document.getElementById("name").value == "")
+		document.getElementById("nameDiv").innerText="이름을 입력하세요.";
+	else
+		document.personForm.submit();
+}
+</Script>
+
+</body>
+</html>

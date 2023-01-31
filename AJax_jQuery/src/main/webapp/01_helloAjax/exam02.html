@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+
+<h1 class="title">$.ajax()함수를 사용한 html 읽기</h1>
+<div class="exec">
+	<input type="button" value="txt파일 가져오기" id="mybtn"/>
+</div>
+<div class="console" id="result"></div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#mybtn').click(function(){
+		$.ajax({
+			type:'get',
+			url:'../text/text02.txt',
+			dataType:'text',//리턴되어서 돌아올 파일 타입
+			success:function(data){
+				$('#result').html(data);
+				$('#result').text(data);
+				$('#result').append(data);
+			},
+			error:function(e){
+				console.log(e)
+				//이건 div에 html을 넣으라는 거 아닌가?
+				//404 에러는 주소값 에러		
+				//500 프로그램 에러
+				//405 get/post방식 에러
+			}
+		});
+	})
+	
+});
+</script>
+</body>
+</html>

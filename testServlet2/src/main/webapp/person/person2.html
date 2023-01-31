@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+color : red;
+font-size : 8pt;
+font-weight : bold;
+}
+</style>
+
+</head>
+<body>
+
+<form name = "personForm" method = "get" action = "http://localhost:8080/testServlet2/Pservlet">
+<table border = "1" cellpadding="3">
+
+<tr>
+<th>이름</th>
+<td><input type = "text" name = "name" id = "name" placeholder = "이름입력" size = "18">
+		<div id = "nameDiv"></div>
+</tr>
+
+<tr>
+	<td>성별</td>
+	<td>
+	<fieldset>
+	<input type = "radio" name = "gender" id = "gender_m" value = "0" checked = "checked"/>
+		<label for "gender_m">남</label>
+		<input type = "radio" name = "gender" id = "gender_f" value = "1"/>
+		<label for "gender_f">여</label>
+	</fieldset>
+	</td>
+</tr>
+
+<tr>
+	<td>색깔</td>
+	<td><select name = "color" id ="color">
+		<optgroup label="색깔" >
+		<option value = "red" >빨강</option>
+		<option value = "green">초록</option>
+		<option value = "blue">파랑</option>
+		<option value = "magenta">보라</option>
+		<option value = "cyan">하늘</option>
+		</optgroup>
+		</select>
+	</td>
+</tr>
+
+<tr>
+	<td>취미</td>
+	<td><input type = "checkbox" name = "hobby" id = "hobby1" value="독서"/>
+		<label for = "hobby1">독서</label>
+		<input type = "checkbox" name = "hobby" id = "hobby2" value="영화"/>
+		<label for = "hobby2">영화</label>
+		<input type = "checkbox" name = "hobby" id = "hobby3" value="음악"/>
+		<label for = "hobby3">음악</label>
+		<input type = "checkbox" name = "hobby" id = "hobby4" value="게임"/>
+		<label for = "hobby4">게임</label>
+		<input type = "checkbox" name = "hobby" id = "hobby5" value="쇼핑"/>
+		<label for = "hobby5">쇼핑</label>
+	</td>
+</tr>
+
+<tr height = "50">
+	<td>과목</td>
+	<td>
+		<select name = "subject" id="subject" size ="5" multiple>
+		<option value = "JAVA" selected="selected">JAVA</option>
+		<option value = "SERVLET">SERVLET</option>
+		<option value = "JSP">JSP</option>
+		<option value = "SPRING">SPRING</option>
+		</select>
+	</td>
+</tr>
+
+<tr>
+<td colspan = "2" align = "center">
+<input type = "button" value = "SEND" onclick = "check()">
+<!-- <button onclick = "check()"; return false;>SEND</button> button은 자동제출
+ --><input type = "reset" value = "CANCEL">
+</table>
+
+</form>
+
+<script type="text/javascript">
+function check(){
+	
+	document.getElementById("nameDiv").innerText="";
+	if(document.getElementById("name").value == "")
+		document.getElementById("nameDiv").innerText="이름을 입력하세요.";
+	else
+		document.personForm.submit();
+}
+</script>
+
+
+</body>
+</html>

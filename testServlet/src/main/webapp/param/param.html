@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	color : red;
+	font-size : 8pt;
+	font-weight : bold;
+}
+</style>
+</head>
+<body>
+<form name = "paramForm" method="get" action="http://localhost:8080/testServlet/ParamServlet"><!-- action에는 submit을 해줄 주소를 적어주면 된다. -->
+<!-- 메소드는 데이터가 보이게할지 아니면 안보이게 할지에 따라 달라지는 것이다. 함수x 방식 -->
+<table border="1" width= "300px" cellpadding ="5" cellspacing="0">
+	<tr>
+		<th width="100">이름</th>
+		<td>
+		<input type = "text" name = "name" id = "name" size ="5"/>
+		<div id = "nameDiv"></div>
+		</td>	
+	</tr>
+	<tr>
+		<th width="100">나이</th>
+		<td><input type = "text" name = "age" id = "age" size="5"/>
+		<div id = "ageDiv"></div>
+		</td>	
+		
+	</tr>
+	<tr>
+	<td colspan = "2" align = "center">
+	<input type = "button" value = "보내기" align = "center" onclick ="javascirpt:check()">
+	<input type = "reset"  value = "취소"/>
+	<!-- 버튼은 이벤트다. 함수호출, 페이지 이동 등등 -->
+	<!-- submit 데이터를 가지고 다른 페이지로 이동한다. -->
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+function check(){
+//	if(document.paramForm.name.value==""){
+	//	alert("이름을  입력하세요");
+//	}else if(document.paramForm.age.value==""){alert("나이를 입력하세요.");}
+
+//	if(document.getElementById("name").value == "") alert("이름을 입력하세요");
+//	else if(document.getElementById("age").value == "") alert("나이를 입력하세요");
+	//id속성으로 조회할 때는 form에 이름 설정 안해놔도 됨.
+		document.getElementById("nameDiv").innerText="";//초기화
+		document.getElementById("ageDiv").innerText="";
+	if(document.getElementById("name").value == "")
+		document.getElementById("nameDiv").innerText="이름을 입력하세요";
+	else if(document.getElementById("age").value == "") 
+		document.getElementById("ageDiv").innerText="나이를 입력하세요";
+	else
+		document.paramForm.submit();
+
+
+//html을 실행한 바디안에 있는 객체들을 전부 도큐먼트라고 한다.
+}
+</script>
+
+
+
+
+<!--  
+<table border = "1">
+<tr>
+	<td>이름</td>
+	<td><input type = "text" name = "name"/></td>	
+</tr>
+
+<tr>
+	<td>나이</td>
+	<td><input type = "text" name = "age">
+</tr>
+
+<tr>
+	<td colspan = "2"><button name = "submit">보내기</button><input type = "reset" name = "reset"/>
+
+</table>
+-->
+
+</body>
+</html>
+
+
+<!-- submit ~ action
+<form>태그안의 입력된 데이터를 들고 다른 페이지로 이동.
+ -->

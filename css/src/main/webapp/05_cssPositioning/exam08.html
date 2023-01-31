@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type = "text/css">
+span{
+	/*  display : none;  이러면 글자가 아예 없어지는 효과 */
+	visibility : hidden; /* 이러면 칸은 존재하고 내 눈에만 안보이는 효과 */
+}
+/* span:hover{
+	visibility : visible;
+	이렇게 해도 숨겨진 요소 위로 마우스를 올렸다고 인식이 되지 않는다. 마우스 올렸다는 이벤트를 인식하지 못한다.
+} */
+li:hover span{
+	visibility : visible;
+	color : red;
+}
+</style>
+</head>
+<body>
+<h3>다음 빈 곳에 숨은 단어?</h3>
+<hr>
+<ul>
+	<li>I(<span id="up"> love</span>) you.
+	<li>Css is Cascading
+			(<span>Style</span>) Sheet.
+	<li>응답하라 (<span>1988</span>).		
+</ul>
+</body>
+</html>

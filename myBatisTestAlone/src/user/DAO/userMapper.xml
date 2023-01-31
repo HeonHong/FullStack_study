@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- 이 부분은 pdf 4페이지 참고 -->
+<!--  <mapper namespace = "userSQL">
+ <resultMap type = "user.bean.UserDTO" id="userResult">
+ <result property = "DTO의 필드명" column="테이블의 컬럼명"/>
+  <result property = "name" column="NAME"/>
+  <result property = "id" column="ID"/>
+  <result property = "pwd" column="PWD"/>
+ </resultMap>
+DB와 DTO의 이름이 다를 때 쓰는 방식이다.  이렇게 되면 RESULTTYPE대신에 RESULTMAP으로 사용-->
+
+ <insert id = "write" parameterType ="user">
+ 	<!-- <insert id = "write" parameterType ="user.bean.UserDTO">
+ 	alias에서 별명 설정해놔서 굳이 풀쿼리 쓸 필요 없어진다. -->
+ 		insert into usertable values(#{name},#{id},#{pwd})
+ 	</insert>
+ 	
+ 	<select id="getList" resultType="user">
+ 	<!-- 넘어올 데이터 없으니까 parameter필요x -->
+ 		select*from usertable
+ 	</select>
+ 	
+ 	<select id="getUser" parameterType="java.lang.String" resultType="user">
+ 	<!-- 넘어올 데이터 없으니까 parameter필요x -->
+ 		select*from usertable where id = #{id}
+ 	</select>
+ 	
+ 	<update id="update" parameterType="java.util.Map">
+ 	<!-- 여기선 제너릭 필요X -->
+ 		update usertable set name=#{name}, pwd=#{pwd} where id = #{id}
+ 	</update>
+ 	
+ 	<delete id="delete" parameterType="String">
+ 	<!-- 여기선 제너릭 필요X -->
+ 		delete from usertable where id = #{id}
+ 	</delete>
+ 	
+ 	<select id="search" parameterType="java.util.Map" resultType="user">
+ 	<!-- 넘어올 데이터 없으니까 parameter필요x -->
+ 		select*from usertable where name like #{name} or id like #{id}
+ 		<!--  select*from usertable where ${search} like '%'||'{searchValue}'||'%'-->
+ 		<!-- sql문 -->
+ 		<!-- select*from usertable where name like '%홍%' or id like null; -->
+ 	</select>
+ 	
+ </mapper>
+
+ <!-- namespace에 이름을 작성하여 내부 태그 아이디가 같아도 타 파일과 충돌 나지 않게 만들어줘야한다. -->

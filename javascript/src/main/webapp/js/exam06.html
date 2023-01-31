@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	//if
+	//let score = 82
+	let score = prompt("당신의 점수는?");
+	//scanner 역할
+	
+	if(score >= 90) grade = "A학점";
+	else if(score >=80) grade = "B학점";
+	else if(score >=70) grade = "C학점";
+	else if(score >=60) grade = "D학점";
+	else grade = "F학점";
+	
+	document.write("당신의 점수는 " + score +"점이므로 " + grade + "입니다.");
+/* 	grade는 변수명 선언하지 않았지만 알아서 잡힌다. 스크립트에서는 굳이 잡아줄 필요없다. default변수형 없음.
+어떻게 선언하는지에 따라 달라짐.*/
+ 
+</script>
+</body>
+</html>

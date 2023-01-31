@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* hidden */
+
+hr{
+	display : none;
+	/* visibility : hidden; */
+	/* 그냥 다른 개발자들이 알아보기 위한 구분선으로 hr태그를 작성해 놓은 것이라 display로 없애준다. */
+}
+.blind, legend{
+	display : block;
+	overflow : hidden;
+	position : absolute;
+	left : 0;
+	top : -1000em;	
+}
+
+/* skip css */
+.skip a{
+	display : block;
+	overflow : hidden;
+	position : absolute;
+	left : 0;
+	top : -1000em;
+	z-index : 9999;/* 이걸 제일 위로 올려서 tab을 했을 때 처음 먹히게 하려고 */
+	width : 100%;
+	background-color : navy;
+	color : white;
+	font : bold 1.3em Tahoma, sans-serif;
+	text-decoration : none;
+	text-align : center;
+}
+
+.skip a:hover, .skip a:active, .skip a:focus{
+	/* 3가지 이벤트들이 발생했을 때 모두 아래와 같이 설정되게 하는 것이다. */
+	top : 0;
+	padding : 0.5em 0;
+}

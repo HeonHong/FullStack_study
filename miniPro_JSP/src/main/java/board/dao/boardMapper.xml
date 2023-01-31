@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace = "boardSQL">
+ 
+ <insert id ="boardWrite" parameterType = "board.bean.BoardDTO">
+ insert into board
+ values(
+ 		seq_board.nextval
+ 		,#{id}
+ 		,#{name} 
+ 		,#{email}
+ 		,#{subject}
+ 		,#{content}
+ 		,seq_board.nextval
+ 		,default
+ 		,default
+ 		,default
+ 		,default
+ 		,default
+ 		,sysdate)
+ </insert>
+ 
+ <select id = "boardList" parameterType = "java.util.Map" resultType = "board.bean.BoardDTO">
+  select * from (select rownum rn, seq, subject, name, logtime, hit from 
+ (select seq, subject, name, to_char(logtime,'YY-MM-DD') 
+ as logtime, hit from board order by seq desc)) where rn<![CDATA[>=]]>#{startNum} and rn<![CDATA[<=]]>#{endNum} 
+ 
+ <!--    select * from (select rownum rn, seq, subject, name, logtime, hit from 
+ (select seq, subject, name, to_char(logtime,'YY-MM-DD') 
+ as logtime, hit from board order by seq desc)) where rn between #{startNum} and #{endNum}  -->
+ 
+ 
+ <!-- select * from (select rownum rn, seq, subject, name, logtime, hit from 
+ (select seq, subject, name, to_char(logtime,'YY-MM-DD') 
+ as logtime, hit from board order by seq desc)) where rn >= #{startNum} and rn &lt;= #{endNum}  -->
+ <!-- 초록색이 뜬다는 뜻은 태그로 인식을 한다는 의미이다. 초록색 뜨는 부분만 수정해주면 된다. -->
+ </select>
+ 
+ 
+<select id = "getTotalA" resultType = "int">
+select count(*) from board
+</select>
+
+<select id = "board" resultType = "board.bean.BoardDTO">
+ select seq, id, name, email, subject, content, to_char(logtime,'YY-MM-DD') 
+ as logtime from board order by seq desc
+ </select>
+ 
+ <select id = "openBoard" resultType = "board.bean.BoardDTO">
+ select seq, id, name, email, subject, content, to_char(logtime,'YY-MM-DD') 
+ as logtime from board order by seq desc
+ </select>
+ </mapper>

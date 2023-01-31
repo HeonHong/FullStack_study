@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h1:after{ /* h1태그가 끝난 다음에 실행된다. */
+	content : "안녕하세요";
+}
+
+h2:before{ /* 게시판이나 댓글 같은 거에 답글을 할 때 나오는 화살표 표시 같은 것들에 사용됨. */
+	content : url("../img/testing.jpg");
+}
+</style>
+</head>
+<body>
+<h1>Hello World!!</h1>
+<h2>Hello World!!</h2>
+</body>
+</html>
+
+<!-- 
+* content
+- html 문서에 쓰지 않고도 CSS로 내용(텍스트나 이미지)을 생성하는 역할
+- :before, :after 가상 요소와 주로 사용된다
+ -->

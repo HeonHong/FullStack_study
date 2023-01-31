@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>window 객체</h1>
+<h3>open메소드 확인</h3>
+<div>
+	<a href="https://www.naver.com" onclick="open1();return false">새 창 열기</a>
+<!-- 	return false가 있으면 거기서 끝나고 return false가 -->	
+	<br>
+	<a href="#" onclick="open2(); return false;">팝업 창 열기(1)</a>
+	<br>
+	<a href="#" onclick="open3('https://www.naver.com'); return false;">팝업 창 열기(2-1)</a>
+	<br>
+	<a href="#" onclick="open3('https://www.daum.net'); return false;">팝업 창 열기(2-2)</a>
+	<br>
+</div>
+
+<script type="text/javascript">
+function open1(){
+	//새로운 창이 열린다.
+	window.open("open.html");
+}
+
+function open2(){
+	//이름을 비우면 클릭할 때마다 새로운 팝업창이 계속 열린다.
+	window.open("open.html","",
+				"width=300, height=500, scrollbar=no, tollbar=no, menubar=no, status=no,location=no");
+	/* window.open은 한 개만 매개변수로 이용하던지 세개로 해야해서 중간에 이름을 비운거다. */
+}
+
+function open3(url){
+	//이름을 작성하면 한 개만 뜬다. 다시 띄우려면 끄고 켜야한다.
+	window.open(url,
+				"myWindow",
+				"width=300, height=500, scrollbar=no, tollbar=no, menubar=no, status=no,location=no");
+	/* window.open은 한 개만 매개변수로 이용하던지 세개로 해야해서 중간에 이름을 비운거다. */
+}
+
+
+</script>
+</body>
+</html>
